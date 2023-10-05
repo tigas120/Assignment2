@@ -119,3 +119,6 @@ sum_col=sum(m,1);
 recall=Diagonal./sum_col';
 overall_recall=mean(recall)
 F1_Score=2*((Overall_Precision*overall_recall)/(Overall_Precision+overall_recall))
+
+%% Upload predicted scores to a file
+csvwrite('predicted_anfis.txt',Y_pred_final_labels)
