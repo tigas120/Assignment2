@@ -2,7 +2,7 @@
 from sklearn.neural_network import MLPClassifier
 from sklearn.datasets import load_wine
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import accuracy_score, cohen_kappa_score, precision_score, recall_score
+from sklearn.metrics import accuracy_score, cohen_kappa_score
 from numpy import savetxt
 from sklearn.metrics import confusion_matrix
 import numpy as np
@@ -14,7 +14,7 @@ y = data.target
 var_names = data.feature_names
 var_names = [var_names[i][0:-5] for i in range(0, len(var_names))]
 var_names = [var_names[i].title().replace(' ','') for i in range(0, len(var_names))]
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.8, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
 # %% Train model
 regr = MLPClassifier(hidden_layer_sizes=(150,70),random_state=42, max_iter=500)
